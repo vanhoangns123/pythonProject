@@ -1,7 +1,7 @@
 from PIL import Image
 import os, sys
 
-path = "/Users/vinhn/Google Drive/xmas design out put/upload files/06/"
+path = "C:/Users/vinhn/Google Drive/Anh Hung/youridioms/"
 dirs = os.listdir( path )
 print(dirs)
 
