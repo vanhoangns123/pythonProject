@@ -14,6 +14,7 @@ temp = [item.find(class_='temp').get_text() for item in items]
 
 print(period_name)
 print(short_desc)
+print(type(short_desc))
 print(temp)
 
 
