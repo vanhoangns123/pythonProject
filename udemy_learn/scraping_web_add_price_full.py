@@ -4,9 +4,9 @@ import urllib.request, json
 df = pd.read_excel ('./YourNewExcel.xlsx') 
 count_row = df.shape[0]
 
-property_type = 1020
-nha_o = []
-nha_o_arr = []
+property_type = 1030
+van_phong = []
+van_phong_arr = []
 
 
 def Average(lst):
@@ -41,10 +41,10 @@ for i in range(count_row):
         average = "empty"
 
     # Append
-    nha_o.append(average)
-    nha_o_arr.append(results)
+    van_phong.append(average)
+    van_phong_arr.append(results)
 
 
-df['nha_o'] = pd.Series(nha_o)
-df['nha_o_arr'] = pd.Series(nha_o_arr)
+df['van_phong'] = pd.Series(van_phong)
+df['van_phong_arr'] = pd.Series(van_phong_arr)
 df.to_excel("./YourNewExcel.xlsx", index=False);
