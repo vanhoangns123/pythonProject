@@ -9,6 +9,18 @@ region: tỉnh/ thành phố
 area: quận/ huyện
 ward: phường/xã
 
+nhà
+  ngõ/ hẻm
+      house_type: 3
+  mặt đường
+      house_type: 1
+
+đất
+  hẻm
+  filter_property_road_condition: 1
+  mặt tiền
+  filter_property_road_condition: 2
+
 
 load region
 https://gateway.chotot.com/v1/public/web-proxy-api/loadRegions
