@@ -154,13 +154,8 @@ class ExcelPython:
         self.df[propertyName+"_avr"]=data
         self.df[propertyName+"_err"]=data_err
 
-    def export(self, fileName, df):
-        try:
-            df
-        except NameError:
-            self.df.to_excel("./" + fileName + '_exported.xlsx', index=False);
-        else:
-            df.to_excel("./" + fileName + '_exported.xlsx', index=False);
+    def export(self, fileName):
+        self.df.to_excel("./" + fileName + '_exported.xlsx', index=False);
 
 
 filter = [
@@ -194,32 +189,43 @@ filter = [
     13111,
     13112,
 ]
-excelFile = ExcelPython('region_area_data', filter)
-excelFile.getPriceByProperty('dat')
-excelFile.export('region_area_data_dat')
+excelFile = ExcelPython('region_area_data_dat_exported')
+# excelFile.getPriceByProperty('dat')
+# excelFile.export('region_area_data_dat')
 
-# excelFile.getPriceByProperty('dat_ngo_hem')
-# excelFile.getPriceByProperty('dat_mat_duong')
+# excelFile.getPriceByProperty('dat', 0, 1)
+# excelFile.export('region_area_data_dat_ngo_hem')
+
+# excelFile.getPriceByProperty('dat', 0, 2)
+# excelFile.export('region_area_data_dat_mat_duong')
+
 # excelFile.getPriceByProperty('nha_o')
-# excelFile.getPriceByProperty('nha_o_ngo_hem')
-# excelFile.getPriceByProperty('nha_o_mat_duong')
-# excelFile.getPriceByProperty('van_phong')
+# excelFile.export('region_area_data_nha_o')
+
+# excelFile.getPriceByProperty('nha_o', 3)
+# excelFile.export('region_area_data_nha_o_ngo_hem')
+
+# excelFile.getPriceByProperty('nha_o', 1)
+# excelFile.export('region_area_data_nha_o_mat_duong')
+
 # excelFile.getPriceByProperty('can_ho')
+# excelFile.export('region_area_data_can_ho')
 
-# excelFile.getAreaAverage('dat_ngo_hem', 'dat_ngo_hem_arr')
-# excelFile.getAreaAverage('dat_mat_duong', 'dat_mat_duong_arr')
-# excelFile.getAreaAverage('nha_o_mat_duong', 'nha_o_mat_duong_arr')
-# excelFile.getAreaAverage('nha_o_ngo_hem', 'nha_o_ngo_hem_arr')
-# excelFile.getAreaAverage('van_phong', 'van_phong_arr')
-# excelFile.getAreaAverage('can_ho', 'can_ho_arr')
-# excelFile.getAreaAverage('nha_o', 'nha_o_arr')
-# excelFile.getAreaAverage('dat', 'dat_arr')
-# excelFile.getAreaAverage('nha_o')
-# excelFile.getAreaAverage('can_ho')
-# excelFile.getAreaAverage('van_phong')
+# excelFile.getPriceByProperty('van_phong')
+# excelFile.export('region_area_data_van_phong')
 
 
-# excelFile.getFilterAreaInfo(filter)
+excelFile.getAreaAverage('dat', 'dat_arr')
+excelFile.getAreaAverage('dat_ngo_hem_ngo_hem', 'dat_ngo_hem_ngo_hem_arr')
+excelFile.getAreaAverage('dat_mat_duong_mat_duong', 'dat_mat_duong_mat_duong_arr')
+excelFile.getAreaAverage('nha_o', 'nha_o_arr')
+excelFile.getAreaAverage('nha_o_mat_duong_mat_duong', 'nha_o_mat_duong_mat_duong_arr')
+excelFile.getAreaAverage('nha_o_ngo_hem_ngo_hem', 'nha_o_ngo_hem_ngo_hem_arr')
+excelFile.getAreaAverage('van_phong', 'van_phong_arr')
+excelFile.getAreaAverage('can_ho', 'can_ho_arr')
+
+
+excelFile.export('region_area_data_dat_export_done')
 
 # temp = excelFile.groupCol("area_name", "area_id")
 # excelFile.export('areaList', temp)
