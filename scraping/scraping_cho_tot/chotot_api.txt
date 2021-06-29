@@ -1,0 +1,42 @@
+&cg=
+đất       1040
+nhà ở     1020
+căn hộ, chung cư    1010
+văn phòng, mặt bằng   1030
+toàn bộ:  1000
+
+region: tỉnh/ thành phố
+area: quận/ huyện
+ward: phường/xã
+
+nhà
+  ngõ/ hẻm
+      house_type: 3
+  mặt đường
+      house_type: 1
+
+đất
+  hẻm
+  filter_property_road_condition: 1
+  mặt tiền
+  filter_property_road_condition: 2
+
+
+load region
+https://gateway.chotot.com/v1/public/web-proxy-api/loadRegions
+
+load area
+https://gateway.chotot.com/v2/public/chapy-pro/wards?area=12076
+
+
+price
+https://gateway.chotot.com/v1/public/ad-listing?region_v2=12000&area_v2=12076&cg=1000&f=p&price=1000000000-30000000000&ward=96&st=s,k&limit=20&key_param_included=true
+
+
+load data
+https://gateway.chotot.com/v1/public/ad-listing?region_v2=12000&area_v2=12076&cg=1040&price=1000000000-30000000000&ward=96&st=s,k&limit=20&key_param_included=true
+https://gateway.chotot.com/v1/public/ad-listing?region_v2=12000&area_v2=12076&cg=1020&ward=96&st=s,k&limit=20&key_param_included=true
+https://gateway.chotot.com/v1/public/ad-listing?region_v2=12000&area_v2=12076&cg=1010&ward=96&st=s,k&limit=20&key_param_included=true
+https://gateway.chotot.com/v1/public/ad-listing?region_v2=12000&area_v2=12076&cg=1030&ward=96&st=s,k&limit=20&w=1&key_param_included=true
+https://gateway.chotot.com/v1/public/ad-listing?region_v2=12000&area_v2=12076&cg=1000&ward=96&st=s,k&limit=20&w=1&key_param_included=true
+
